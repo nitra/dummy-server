@@ -7,7 +7,7 @@
 ## Usage
 
 ```bash
-docker build -t nitra/dummy-server .
+docker run -p 80:80 --init nitra/dummy-server
 ```
 
 ## Build

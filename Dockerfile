@@ -1,4 +1,6 @@
-FROM node:alpine
+FROM alpine
+
+RUN apk add --no-cache nodejs
 
 COPY index.js /
 
