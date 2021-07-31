@@ -1,18 +1,26 @@
 # Dummy HTTP Server
 
-| Request Path      | Response Status Code |
-|-------------------|----------------------|
-| /NNN              | NNN                  |
-| _everything else_ | 200                  |
+| Request Path | Response Status Code |
+| ------------ | -------------------- |
+| \*           | 200                  |
 
 ## Usage
 
-`docker run -i -t -p 8080:8080 jasonrm/dummy-server`
-
-## Options
-
+```bash
+docker build -t nitra/dummy-server .
 ```
-Usage of ./dummy-server:
-  -port int
-        port number (default 8080)
+
+## Build
+
+```bash
+docker build -t nitra/dummy-server .
+docker push nitra/dummy-server
+```
+
+## test
+
+```bash
+curl -v http://localhost
+npx autocannon http://localhost
+wrk -t2 -c100 -d30s   http://localhost:80
 ```

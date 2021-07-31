@@ -1,11 +1,7 @@
-FROM alpine:latest
+FROM node:alpine
 
-MAINTAINER Jason Richard McNeil <jason@jasonrm.net>
+COPY index.js /
 
-COPY build.sh main.go /
+EXPOSE 80
 
-RUN /bin/sh build.sh
-
-EXPOSE 8080
-
-ENTRYPOINT ["/usr/local/bin/dummy-server"]
+CMD ["node", "."]
