@@ -1,0 +1,9 @@
+{
+  "name": "dummy",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx nodemon index.js",
+    "test": "curl -X POST http://localhost/test",
+    "test-graphql": "curl -i -X POST http://localhost:80/graphql -H 'Content-Type: application/json' -d @introspection_query.json"
+  }
+}
