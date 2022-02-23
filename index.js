@@ -11,4 +11,4 @@ const app = http.createServer(function (req, res) {
     res.end('{}')
   }
 })
-app.listen(80)
+app.listen(process.env.PORT || 80)
